@@ -1,0 +1,12 @@
+export { FindUniqueUsuariosResolver } from "./Usuarios/FindUniqueUsuariosResolver";
+export { FindFirstUsuariosResolver } from "./Usuarios/FindFirstUsuariosResolver";
+export { FindManyUsuariosResolver } from "./Usuarios/FindManyUsuariosResolver";
+export { CreateUsuariosResolver } from "./Usuarios/CreateUsuariosResolver";
+export { CreateManyUsuariosResolver } from "./Usuarios/CreateManyUsuariosResolver";
+export { DeleteUsuariosResolver } from "./Usuarios/DeleteUsuariosResolver";
+export { UpdateUsuariosResolver } from "./Usuarios/UpdateUsuariosResolver";
+export { DeleteManyUsuariosResolver } from "./Usuarios/DeleteManyUsuariosResolver";
+export { UpdateManyUsuariosResolver } from "./Usuarios/UpdateManyUsuariosResolver";
+export { UpsertUsuariosResolver } from "./Usuarios/UpsertUsuariosResolver";
+export { AggregateUsuariosResolver } from "./Usuarios/AggregateUsuariosResolver";
+export { GroupByUsuariosResolver } from "./Usuarios/GroupByUsuariosResolver";

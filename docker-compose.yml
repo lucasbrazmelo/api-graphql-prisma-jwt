@@ -1,0 +1,69 @@
+version: "3.7"
+services:
+  app: 
+    container_name: app
+    build:
+      context: .
+      dockerfile: docker/nodejs/Dockerfile
+    ports: 
+      - '3000:3000'
+      - '5555:5555'
+    volumes: 
+      - ./src:/usr/app
+    depends_on:
+      - db
+    links:
+      - db
+    networks:
+      - network_api_prima_jwt
+    restart: always
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - PMA_USER=newuser
+      - PMA_PASSWORD=password
+    depends_on:
+      - db
+    links:
+      - db
+    restart: always
+    networks:
+      - network_api_prima_jwt
+  
+  db:
+    container_name: db
+    build:
+      context: .
+      dockerfile: docker/mysql/Dockerfile
+    cap_add:
+      - SYS_NICE
+    security_opt:
+      - seccomp:unconfined
+    environment: 
+      - MYSQL_DATABASE=banco_dados
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_AUTHENTICATION_PLUGIN=mysql_native_password
+      - ALLOW_EMPTY_PASSWORD=NO
+      - MYSQL_USER=newuser
+      - MYSQL_PASSWORD=password
+    command: --authentication_policy=mysql_native_password
+    restart: always
+    volumes:
+      - db_data_node:/usr/data
+    ports:
+      - 3306:3306
+    networks:
+      - network_api_prima_jwt
+
+networks:
+  network_api_prima_jwt:
+    driver: bridge
+
+volumes:
+  db_data_node:

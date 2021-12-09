@@ -1,0 +1,12 @@
+export { AggregateUsuariosArgs } from "./AggregateUsuariosArgs";
+export { CreateManyUsuariosArgs } from "./CreateManyUsuariosArgs";
+export { CreateUsuariosArgs } from "./CreateUsuariosArgs";
+export { DeleteManyUsuariosArgs } from "./DeleteManyUsuariosArgs";
+export { DeleteUsuariosArgs } from "./DeleteUsuariosArgs";
+export { FindFirstUsuariosArgs } from "./FindFirstUsuariosArgs";
+export { FindManyUsuariosArgs } from "./FindManyUsuariosArgs";
+export { FindUniqueUsuariosArgs } from "./FindUniqueUsuariosArgs";
+export { GroupByUsuariosArgs } from "./GroupByUsuariosArgs";
+export { UpdateManyUsuariosArgs } from "./UpdateManyUsuariosArgs";
+export { UpdateUsuariosArgs } from "./UpdateUsuariosArgs";
+export { UpsertUsuariosArgs } from "./UpsertUsuariosArgs";
